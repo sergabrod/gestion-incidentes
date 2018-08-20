@@ -2,16 +2,17 @@
     <div class="card-header text-white bg-primary">Menú</div>
 
     <div class="card-body">
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">
-                Cras justo odio
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                Dapibus ac facilisis in
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                Morbi leo risus
-            </a>
-        </div>
+        <ul class="nav nav-pills flex-column">
+            @if (auth()->check())
+                <li class="nav-item"><a href="#" class="nav-link active">Dashboard</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Ver incidencias</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Reportar incidencias</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Administración</a></li>
+            @else
+                <li class="nav-item"><a href="#" class="nav-link">Bienvenidos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Instrucciones</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Créditos</a></li>
+            @endif
+        </ul>
     </div>
 </div>
