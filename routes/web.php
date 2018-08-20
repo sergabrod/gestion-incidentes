@@ -22,8 +22,8 @@ Route::get('/reportar', 'HomeController@report');
 
 //Creamos un grupo de rutas que sean validadas por un middleware
 //Solo podrán acceder a estas rutas los usuarios administradores
-Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function (){
+Route::group(['middleware' => 'admin', 'namespace' => 'Admin'], function (){
     Route::get('/usuarios', 'UserController@index');
     Route::get('/proyectos', 'ProjectController@index');
-    Route::get('/config', 'ConfigController@index');
+    Route::get('/configuracion', 'ConfigController@index');
 });
